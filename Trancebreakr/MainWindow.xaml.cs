@@ -36,6 +36,7 @@ namespace Trancebreakr
                 MessageBox.Show("Enter a time to set the alarm. ");
                 return;
             }
+            DateTime timeOfDayDateTime = DateTime.Parse(timeOfDay);
 
             var numberOfMinutesWarningInt = 10;
             int.TryParse(numberOfMinutesWarning, out numberOfMinutesWarningInt);
@@ -44,12 +45,13 @@ namespace Trancebreakr
                 MessageBox.Show("Enter a number of minutes for warning needed.");
                 return;
             }
+            DateTime warningDateTime = timeOfDayDateTime.Add(new TimeSpan(0, -numberOfMinutesWarningInt, 0));
 
             //TODO: set the alarms
             
             //CreateScheduledTask("MyTestTask", "cmd", "");
-            CreateScheduledTask("TrancebreakrShutdownWarning", "cmd", $"/C TITLE Shutdown coming soon!&ECHO.& ECHO.& ECHO Computer shutting down in {numberOfMinutesWarningInt} minutes!&ECHO.& ECHO.& TIMEOUT 3", new DateTime());
-            CreateScheduledTask("TrancebreakrShutdown", "cmd", $"/C Rundll32.exe Powrprof.dll,SetSuspendState Hibernate", new DateTime());
+            CreateScheduledTask("TrancebreakrShutdownWarning", "cmd", $"/C TITLE Shutdown coming soon!&ECHO.& ECHO.& ECHO Computer shutting down in {numberOfMinutesWarningInt} minutes!&ECHO.& ECHO.& TIMEOUT 3", timeOfDayDateTime);
+            CreateScheduledTask("TrancebreakrShutdown", "cmd", $"/C Rundll32.exe Powrprof.dll,SetSuspendState Hibernate", warningDateTime);
             MessageBox.Show($"Time of day to set alarm: {timeOfDay}, Number of minutes beforehand to give a warning: {numberOfMinutesWarningInt}");
         }
 
