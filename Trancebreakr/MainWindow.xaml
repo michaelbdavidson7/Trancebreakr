@@ -1,0 +1,24 @@
+﻿<Window x:Class="Trancebreakr.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Trancebreakr"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ListBox x:Name="existingScheduledTasks" HorizontalAlignment="Left" Height="161" Margin="480,149,0,0" VerticalAlignment="Top" Width="254">
+            <ListBoxItem Content="Refresh to see your existing scheduled tasks." />
+        </ListBox>
+        <Label x:Name="description" Content="This project is a tool to set shutdown times/warnings for your computer to break your or your child out of the computer trance!" HorizontalAlignment="Left" Margin="55,19,0,0" VerticalAlignment="Top" Width="687"/>
+
+        <xctk:TimePicker x:Name="timeOfDayTextBox" HorizontalAlignment="Left" Margin="42,133,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="timeLabel" Content="Time of day to shut down pc" HorizontalAlignment="Left" Margin="42,102,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="numMinutesWarningLabel" Content="Number of minutes beforehand to warn" HorizontalAlignment="Left" Margin="42,180,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="numberOfMinutesWarningTextBox" HorizontalAlignment="Left" Height="23" Margin="42,211,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="setScheduleButton" Content="Set Scheduled Tasks" HorizontalAlignment="Left" Margin="55,302,0,0" VerticalAlignment="Top" Width="136" Click="SetScheduleButton_Click"/>
+        <Button x:Name="button" Content="Delete scheduled tasks" HorizontalAlignment="Left" Margin="55,327,0,0" VerticalAlignment="Top" Width="136" Click="Button_Click"/>
+
+    </Grid>
+</Window>
