@@ -50,8 +50,8 @@ namespace Trancebreakr
             //TODO: set the alarms
             
             //CreateScheduledTask("MyTestTask", "cmd", "");
-            CreateScheduledTask("TrancebreakrShutdownWarning", "cmd", $"/C TITLE Shutdown coming soon!&ECHO.& ECHO.& ECHO Computer shutting down in {numberOfMinutesWarningInt} minutes!&ECHO.& ECHO.& TIMEOUT 3", timeOfDayDateTime);
-            CreateScheduledTask("TrancebreakrShutdown", "cmd", $"/C Rundll32.exe Powrprof.dll,SetSuspendState Hibernate", warningDateTime);
+            CreateScheduledTask("TrancebreakrShutdownWarning", "cmd", $"/C TITLE Shutdown coming soon!&ECHO.& ECHO.& ECHO Computer shutting down in {numberOfMinutesWarningInt} minutes!&ECHO.& ECHO.& TIMEOUT 3", warningDateTime);
+            CreateScheduledTask("TrancebreakrShutdown", "cmd", $"/C Rundll32.exe Powrprof.dll,SetSuspendState Hibernate", timeOfDayDateTime);
             MessageBox.Show($"Time of day to set alarm: {timeOfDay}, Number of minutes beforehand to give a warning: {numberOfMinutesWarningInt}");
         }
 
