@@ -22,9 +22,11 @@ namespace Trancebreakr
     /// </summary>
     public partial class MainWindow : Window
     {
+        string mainProgramKey = "Trancebreakr";
         public MainWindow()
         {
             InitializeComponent();
+            UpdateScheduledTasksList();
         }
 
         private void SetScheduleButton_Click(object sender, RoutedEventArgs e)
@@ -50,9 +52,11 @@ namespace Trancebreakr
             //TODO: set the alarms
             
             //CreateScheduledTask("MyTestTask", "cmd", "");
-            CreateScheduledTask("TrancebreakrShutdownWarning", "cmd", $"/C TITLE Shutdown coming soon!&ECHO.& ECHO.& ECHO Computer shutting down in {numberOfMinutesWarningInt} minutes!&ECHO.& ECHO.& TIMEOUT 3", warningDateTime);
-            CreateScheduledTask("TrancebreakrShutdown", "cmd", $"/C Rundll32.exe Powrprof.dll,SetSuspendState Hibernate", timeOfDayDateTime);
+            CreateScheduledTask($"{mainProgramKey}ShutdownWarning", "cmd", $"/C TITLE Shutdown coming soon!&ECHO.& ECHO.& ECHO Computer shutting down in {numberOfMinutesWarningInt} minutes!&ECHO.& ECHO.& TIMEOUT 3", warningDateTime);
+            CreateScheduledTask($"{mainProgramKey}Shutdown", "cmd", $"/C Rundll32.exe Powrprof.dll,SetSuspendState Hibernate", timeOfDayDateTime);
+            UpdateScheduledTasksList();
             MessageBox.Show($"Time of day to set alarm: {timeOfDay}, Number of minutes beforehand to give a warning: {numberOfMinutesWarningInt}");
+
         }
 
         public void CreateScheduledTask(string taskName, string taskProgramTrigger, string taskCommand, DateTime startTime)
@@ -78,37 +82,74 @@ namespace Trancebreakr
             }
         }
 
+        private List<string> GetOurScheduledTasks(string programKey)
+        {
+            string lowercaseProgramKey = programKey.ToLower();
+            List<string> programTasksList = new List<string>();
+            using (TaskService ts = new TaskService())
+            {
+                foreach (Microsoft.Win32.TaskScheduler.Task task in ts.RootFolder.Tasks)
+                {
+                    if (task.Name.ToLower().Contains(lowercaseProgramKey))
+                    {
+                        programTasksList.Add(task.Name);
+                    }
+                }
+            }
+            return programTasksList;
+        }
+
+        public void UpdateScheduledTasksList()
+        {
+            List<string> programTasksList = GetOurScheduledTasks(mainProgramKey);
+            existingScheduledTasks.Items.Clear();
+            if (programTasksList.Count > 0)
+            {
+                foreach (string s in programTasksList)
+                {
+
+                    ListBoxItem itm = new ListBoxItem();
+                    itm.Content = s;
+                    existingScheduledTasks.Items.Add(itm);
+                }
+            } else
+            {
+                ListBoxItem itm = new ListBoxItem();
+                itm.Content = "No tasks scheduled";
+                existingScheduledTasks.Items.Add(itm);
+            }
+        }
+
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
             using (TaskService ts = new TaskService())
             {
-                string taskName1 = "TrancebreakrShutdownWarning";
-                string taskName2 = "TrancebreakrShutdown";
                 bool task1Found = false;
-                bool task2found = false;
                 foreach (Microsoft.Win32.TaskScheduler.Task task in ts.RootFolder.Tasks)
                 {
-                    if(task.Name == taskName1)
+                    if(task.Name.Contains(mainProgramKey))
                     {
+                        ts.RootFolder.DeleteTask(task.Name);
                         task1Found = true;
-                    } else if (task.Name == taskName2)
-                    {
-                        task2found = true;
-                    }
+                    } 
                 }
-                if(task1Found && task2found)
+                if(task1Found)
                 {
-                    ts.RootFolder.DeleteTask(taskName1);
-                    ts.RootFolder.DeleteTask(taskName2);
                     MessageBox.Show("Scheduled tasks deleted.");
                 } else
                 {
                     MessageBox.Show("Scheduled tasks weren't found so they weren't deleted.");
                 }
-
+                UpdateScheduledTasksList();
 
             }
+        }
+
+        private void refreshTasks_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateScheduledTasksList();
         }
     }
 }
