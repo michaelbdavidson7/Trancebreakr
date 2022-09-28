@@ -11,16 +11,16 @@
         <ListBox x:Name="existingScheduledTasks" HorizontalAlignment="Left" Height="161" Margin="480,149,0,0" VerticalAlignment="Top" Width="254">
             <ListBoxItem Content="Refresh to see your existing scheduled tasks." />
         </ListBox>
-        <Label x:Name="description" Content="This project is a tool to set shutdown times/warnings for your computer to break your or your child out of the computer trance!" HorizontalAlignment="Left" Margin="55,19,0,0" VerticalAlignment="Top" Width="687"/>
+        <Label x:Name="description" Content="This project is a tool to set shutdown automatic warnings and shutdown tasks for your computer to break the trance!" HorizontalAlignment="Left" Margin="55,19,0,0" VerticalAlignment="Top" Width="687"/>
 
         <xctk:TimePicker x:Name="timeOfDayTextBox" HorizontalAlignment="Left" Margin="42,133,0,0" Text="11:30 PM" VerticalAlignment="Top"/>
-        <Label x:Name="timeLabel" Content="Time of day to shut down pc" HorizontalAlignment="Left" Margin="42,107,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="numMinutesWarningLabel" Content="Number of minutes beforehand to warn" HorizontalAlignment="Left" Margin="42,180,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="timeLabel" Content="Time of day to shut down pc" Margin="42,107,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0,5,5,5"/>
+        <Label x:Name="numMinutesWarningLabel" Content="Number of minutes beforehand to warn" HorizontalAlignment="Left" Margin="42,180,0,0" VerticalAlignment="Top" Padding="0,5,5,5"/>
         <TextBox x:Name="numberOfMinutesWarningTextBox" HorizontalAlignment="Left" Height="23" Margin="42,211,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="setScheduleButton" Content="Set Scheduled Tasks" HorizontalAlignment="Left" Margin="55,267,0,0" VerticalAlignment="Top" Width="170" Click="SetScheduleButton_Click" Height="43"/>
         <Button x:Name="button" Content="Delete scheduled tasks" HorizontalAlignment="Left" Margin="480,315,0,0" VerticalAlignment="Top" Width="136" Click="Button_Click"/>
         <Button x:Name="refreshTasks" Content="Refresh tasks" HorizontalAlignment="Left" Margin="659,124,0,0" VerticalAlignment="Top" Width="75" Click="refreshTasks_Click"/>
-        <Label x:Name="currentScheduledTasksListLabel" Content="Current Scheduled Tasks" HorizontalAlignment="Left" Margin="480,123,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="currentScheduledTasksListLabel" Content="Trancebreakr Tasks" HorizontalAlignment="Left" Margin="480,123,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
