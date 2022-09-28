@@ -92,7 +92,7 @@ namespace Trancebreakr
                 {
                     if (task.Name.ToLower().Contains(lowercaseProgramKey))
                     {
-                        programTasksList.Add(task.Name);
+                        programTasksList.Add(task.Name + " - " + string.Format("{0:hh:mm:ss tt}", task.NextRunTime));
                     }
                 }
             }

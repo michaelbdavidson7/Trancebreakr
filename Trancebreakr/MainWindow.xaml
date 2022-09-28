@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:Trancebreakr"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Trancebreakr" Height="450" Width="800">
     <Grid>
         <ListBox x:Name="existingScheduledTasks" HorizontalAlignment="Left" Height="161" Margin="480,149,0,0" VerticalAlignment="Top" Width="254">
             <ListBoxItem Content="Refresh to see your existing scheduled tasks." />
         </ListBox>
-        <Label x:Name="description" Content="This project is a tool to set shutdown automatic warnings and shutdown tasks for your computer to break the trance!" HorizontalAlignment="Left" Margin="55,19,0,0" VerticalAlignment="Top" Width="687"/>
+        <Label x:Name="description" Content="This program is a tool to set automatic shutdown Scheduled Tasks for your PC.&#xD;&#xA;Escape the doomscrolling; Leave thevirtual world and wake up on time tomorrow!" HorizontalAlignment="Center" Margin="36,22,0,0" VerticalAlignment="Top" Width="698" Height="57" FontStyle="Italic" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
         <xctk:TimePicker x:Name="timeOfDayTextBox" HorizontalAlignment="Left" Margin="42,133,0,0" Text="11:30 PM" VerticalAlignment="Top"/>
         <Label x:Name="timeLabel" Content="Time of day to shut down pc" Margin="42,107,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0,5,5,5"/>
