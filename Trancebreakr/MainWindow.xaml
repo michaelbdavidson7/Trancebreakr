@@ -13,7 +13,7 @@
         </ListBox>
         <Label x:Name="description" Content="This project is a tool to set shutdown times/warnings for your computer to break your or your child out of the computer trance!" HorizontalAlignment="Left" Margin="55,19,0,0" VerticalAlignment="Top" Width="687"/>
 
-        <xctk:TimePicker x:Name="timeOfDayTextBox" HorizontalAlignment="Left" Margin="42,133,0,0" VerticalAlignment="Top"/>
+        <xctk:TimePicker x:Name="timeOfDayTextBox" HorizontalAlignment="Left" Margin="42,133,0,0" Text="11:30 PM" VerticalAlignment="Top"/>
         <Label x:Name="timeLabel" Content="Time of day to shut down pc" HorizontalAlignment="Left" Margin="42,102,0,0" VerticalAlignment="Top"/>
         <Label x:Name="numMinutesWarningLabel" Content="Number of minutes beforehand to warn" HorizontalAlignment="Left" Margin="42,180,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="numberOfMinutesWarningTextBox" HorizontalAlignment="Left" Height="23" Margin="42,211,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="120"/>
