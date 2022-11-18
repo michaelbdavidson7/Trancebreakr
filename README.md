@@ -7,7 +7,7 @@ Does this happen to your kid? Are you in college, spending every night up way to
 Break the spell! Take away the need for willpower and let automation take over! Automation is the new discipline! 
 
 Trancebreakr is a program to create Windows Scheduled Tasks that 
-1) shuts down the computer at a designated time
+1) shuts down the computer at a designated time every night
 2) gives a warning x minutes before shutting down. 
 
 Add or delete the Tasks from within the program. 
