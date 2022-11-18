@@ -1,7 +1,6 @@
 # Trancebreakr
 
 Ever lose track of time and stay up too late, ruining your next day? 
-![trancebreakr_demo](https://user-images.githubusercontent.com/6875673/202711070-5d5ae8ee-ea7e-42bb-8645-90b9c878e0e7.png)
 
 Does this happen to your kid? Are you in college, spending every night up way too late? 
 
@@ -11,6 +10,8 @@ Trancebreakr is a program to create Windows Scheduled Tasks that
 
 Add or delete the Tasks from within the program. 
 
+
+![trancebreakr_demo](https://user-images.githubusercontent.com/6875673/202711070-5d5ae8ee-ea7e-42bb-8645-90b9c878e0e7.png)
 
 # Troubleshooting
 
