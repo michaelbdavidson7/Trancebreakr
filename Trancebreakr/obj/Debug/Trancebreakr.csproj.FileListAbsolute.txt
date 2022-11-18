@@ -40,3 +40,8 @@ C:\Users\mike\source\repos\Trancebreakr\Trancebreakr\bin\Debug\it\Microsoft.Win3
 C:\Users\mike\source\repos\Trancebreakr\Trancebreakr\bin\Debug\pl\Microsoft.Win32.TaskScheduler.resources.dll
 C:\Users\mike\source\repos\Trancebreakr\Trancebreakr\bin\Debug\ru\Microsoft.Win32.TaskScheduler.resources.dll
 C:\Users\mike\source\repos\Trancebreakr\Trancebreakr\bin\Debug\zh-CN\Microsoft.Win32.TaskScheduler.resources.dll
+C:\Users\mike\source\repos\Trancebreakr\Trancebreakr\obj\Debug\Trancebreakr.TrustInfo.xml
+C:\Users\mike\source\repos\Trancebreakr\Trancebreakr\obj\Debug\Trancebreakr.exe.manifest
+C:\Users\mike\source\repos\Trancebreakr\Trancebreakr\bin\Debug\Trancebreakr.exe.manifest
+C:\Users\mike\source\repos\Trancebreakr\Trancebreakr\bin\Debug\Trancebreakr.application
+C:\Users\mike\source\repos\Trancebreakr\Trancebreakr\obj\Debug\Trancebreakr.application

@@ -39,3 +39,6 @@ C:\Users\mike\source\repos\Trancebreakr\Trancebreakr\obj\Release\Trancebreakr.cs
 C:\Users\mike\source\repos\Trancebreakr\Trancebreakr\obj\Release\Trancebreakr.csproj.CopyComplete
 C:\Users\mike\source\repos\Trancebreakr\Trancebreakr\obj\Release\Trancebreakr.exe
 C:\Users\mike\source\repos\Trancebreakr\Trancebreakr\obj\Release\Trancebreakr.pdb
+C:\Users\mike\source\repos\Trancebreakr\Trancebreakr\obj\Release\Trancebreakr.csprojAssemblyReference.cache
+C:\Users\mike\source\repos\Trancebreakr\Trancebreakr\obj\Release\Trancebreakr.TrustInfo.xml
+C:\Users\mike\source\repos\Trancebreakr\Trancebreakr\obj\Release\Trancebreakr.exe.manifest
