@@ -4,7 +4,7 @@ Ever lose track of time and stay up too late, ruining your next day?
 
 Does this happen to your kid? Are you in college, spending every night up way too late? 
 
-Break the spell! Take away the need for willpower and let automation take over! Automation is the new discipline! 
+Break the spell! Forget about willpower and let automation take over - Automation is the new discipline anyway!
 
 Trancebreakr is a program to create Windows Scheduled Tasks that 
 1) shuts down the computer at a designated time every night
