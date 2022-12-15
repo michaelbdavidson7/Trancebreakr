@@ -18,3 +18,7 @@ Add or delete the Tasks from within the program.
 # Troubleshooting
 
 If you uninstalled this app and don't know where to look to remove the shutdown tasks, go to Task Scheduler on your computer and they will be there. 
+
+
+# Dev notes
+Publishing via ClickOnce was broken with a recent commit and I had to create builds using Inno Script instead. I Published to a local folder via VS, copied the program files to a different folder, then compiled that via Inno Script. Much better!
