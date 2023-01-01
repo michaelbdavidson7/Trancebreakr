@@ -88,14 +88,14 @@ namespace Trancebreakr
             //TODO: set the alarms
             
             //CreateScheduledTask("MyTestTask", "cmd", "");
-            CreateScheduledTask($"{mainProgramKey}ShutdownWarning", "cmd", $"/C TITLE Shutdown coming soon!&ECHO.& ECHO.& ECHO Computer shutting down in {numberOfMinutesWarningInt} minutes!&ECHO.& ECHO.& TIMEOUT 3", warningDateTime, $"Warning {numberOfMinutesWarningInt}m before shutdown");
-            CreateScheduledTask($"{mainProgramKey}Shutdown", "cmd", $"/C Rundll32.exe Powrprof.dll,SetSuspendState Hibernate", timeOfDayDateTime, "Shuts down computer");
+            CreateScheduledTask($"{mainProgramKey}ShutdownWarning", "cmd", $"/C TITLE Shutdown coming soon!&ECHO.& ECHO.& ECHO Computer shutting down in {numberOfMinutesWarningInt} minutes!&ECHO.& ECHO.& TIMEOUT 3", warningDateTime, $"Warning {numberOfMinutesWarningInt}m before shutdown", highestPrivledges:false);
+            CreateScheduledTask($"{mainProgramKey}Shutdown", "cmd", $"/C Rundll32.exe Powrprof.dll,SetSuspendState Hibernate", timeOfDayDateTime, "Shuts down computer", highestPrivledges:true);
             UpdateScheduledTasksList();
             MessageBox.Show($"Time of day to set alarm: {timeOfDay}, Number of minutes beforehand to give a warning: {numberOfMinutesWarningInt}");
 
         }
 
-        public void CreateScheduledTask(string taskName, string taskProgramTrigger, string taskCommand, DateTime startTime, string taskDescription)
+        public void CreateScheduledTask(string taskName, string taskProgramTrigger, string taskCommand, DateTime startTime, string taskDescription, bool highestPrivledges=false)
         {
             // Get the service on the local machine
             using (TaskService ts = new TaskService())
@@ -104,10 +104,13 @@ namespace Trancebreakr
                 TaskDefinition td = ts.NewTask();
                 td.RegistrationInfo.Description = taskDescription ?? "Does something";
 
-                // Logged on or not with highest privileges 
-                td.Principal.LogonType = TaskLogonType.S4U;
-                td.Principal.RunLevel = TaskRunLevel.Highest;
+                if (highestPrivledges)
+                {
+                    // Logged on or not with highest privileges 
+                    td.Principal.LogonType = TaskLogonType.S4U;
+                    td.Principal.RunLevel = TaskRunLevel.Highest;
 
+                }
                 // Create a trigger that will fire the task at this time every other day
                 td.Triggers.Add(new DailyTrigger { DaysInterval = 1, StartBoundary = startTime });
 
