@@ -16,7 +16,6 @@ Add or delete the Tasks from within the program.
 ![trancebreakr_demo](https://user-images.githubusercontent.com/6875673/202711070-5d5ae8ee-ea7e-42bb-8645-90b9c878e0e7.png)
 # Known Issues
 - If using a laptop, computer must be connected to power to execute
-- Warning isn't working as of this build on certain machines
 
 # Troubleshooting
 
